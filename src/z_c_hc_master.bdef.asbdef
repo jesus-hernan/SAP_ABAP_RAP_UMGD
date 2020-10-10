@@ -1,0 +1,9 @@
+projection;
+
+define behavior for z_c_hc_master alias HCMMaster
+{
+
+  use create;
+  use update;
+  use delete;
+}

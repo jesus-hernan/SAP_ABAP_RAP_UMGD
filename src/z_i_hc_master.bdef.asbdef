@@ -1,0 +1,15 @@
+unmanaged implementation in class zbp_i_hc_master unique;
+
+define behavior for z_i_hc_master alias HCMMaster
+lock master
+etag master lchg_date_time
+
+{
+
+  field ( readonly ) e_number;
+  field ( mandatory : create ) e_name;
+
+  create;
+  update;
+  delete;
+}
