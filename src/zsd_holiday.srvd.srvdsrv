@@ -1,0 +1,5 @@
+@EndUserText.label: 'Holiday'
+define service ZSD_HOLIDAY {
+  expose Z_I_HOLIDAY as Holiday;
+  expose Z_HOLIDAY_TEXT as Text;
+}

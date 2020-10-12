@@ -1,0 +1,24 @@
+managed; // implementation in class zbp_i_holiday unique;
+
+define behavior for Z_I_HOLIDAY alias HolidayRoot
+persistent table zcal_holiday_000
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _HolidayTxt { create; }
+}
+
+define behavior for Z_HOLIDAY_TEXT alias HolidayText
+persistent table zcal_holitxt_000
+lock dependent by _PublicHoliday
+//authorization dependent by <association>
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) holiday_id;
+}
